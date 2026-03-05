@@ -1,5 +1,5 @@
-num = [1];
-den = [1 3 2];
+num = [5];
+den = [1 0.1 1];
 sys = tf(num, den);
 
 C = pidtune(sys, 'PID');
@@ -12,4 +12,4 @@ fprintf('Ki = %.4f\n', Ki)
 fprintf('Kd = %.4f\n', Kd)
 
 sys_closed = feedback(C*sys, 1);
-step(sys_closed)
+%step(sys_closed)
